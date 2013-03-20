@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>A &amp; M Karate Tournament System</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <!-- NOTE: assumes bootstrap grid system -->
+  <div class="wrapper">
+    <div class="container">
+    <!-- TITLE BAR -->
+  	
+  	<!-- NAV BAR -->
+  	<div class="navbar">
+  	  <div class="navbar-inner">
+  	    <div class="container">
+  	      
+  	    </div>
+  	  </div>
+  	</div>
+  	</div>
+  	<!-- MAIN CONTENT -->
+  	<div class="container">
+  		<div class="row">
+  			<!-- main content placed here -->
+  			<div class="span12">
+  			  <div id="main_content">
+  			   <%= yield %>
+  			  </div>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+	
+	<!-- FOOTER -->
+	<footer>
+    <div class="container">
+
+    </div>
+  </footer>
+</body>
+</html>
