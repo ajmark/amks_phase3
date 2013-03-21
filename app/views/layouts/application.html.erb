@@ -23,6 +23,14 @@
   	</div>
   	<!-- MAIN CONTENT -->
   	<div class="container">
+
+      <% flash.each do |name, msg| %>
+      <div class="alert alert-<%= :notice ? "success" : "error" %>">
+        <a class="close" data-dismiss="alert">x</a>
+         <%= msg %>
+      </div>
+      <% end %>
+
   		<div class="row">
   			<!-- main content placed here -->
   			<div class="span12">
