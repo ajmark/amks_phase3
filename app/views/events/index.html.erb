@@ -1,0 +1,15 @@
+<h1>List of Events</h1>
+
+<table class = "table table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Active</th>
+	</tr>
+
+<% @events.each do |event| %>
+	<tr>
+		<td><%= link_to event.name, event_path(event) %></td> 
+		<td><%= event.active %></td>
+	</tr>
+<% end %>
+</table>
