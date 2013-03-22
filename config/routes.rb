@@ -1,5 +1,13 @@
 Karate67272::Application.routes.draw do
 
+  get "sections/index"
+
+  get "sections/show"
+
+  get "sections/edit"
+
+  get "sections/new"
+
   get "students/index"
 
   get "students/view"

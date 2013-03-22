@@ -16090,3 +16090,49 @@ Processing by StudentsController#edit as HTML
   Rendered students/_form.html.erb (17.5ms)
   Rendered students/edit.html.erb within layouts/application (18.5ms)
 Completed 200 OK in 42ms (Views: 40.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2013-03-21 22:20:27 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (1.1ms)[0m  [1mSELECT "students".* FROM "students" WHERE (students.active = 't') ORDER BY last_name, first_name LIMIT 10 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "students" WHERE (students.active = 't')
+  Rendered students/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 30ms (Views: 27.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-03-21 22:20:30 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" [0m
+  Rendered events/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/4" for 127.0.0.1 at 2013-03-21 22:20:32 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", "4"]]
+  Rendered events/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-03-21 22:20:34 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" [0m
+  Rendered events/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 26ms (Views: 24.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2013-03-21 22:20:35 -0400
+Processing by StudentsController#index as HTML
+  [1m[35mStudent Load (1.0ms)[0m  SELECT "students".* FROM "students" WHERE (students.active = 't') ORDER BY last_name, first_name LIMIT 10 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "students" WHERE (students.active = 't')[0m
+  Rendered students/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/students/20" for 127.0.0.1 at 2013-03-21 22:20:38 -0400
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", "20"]]
+  Rendered students/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.2ms)
