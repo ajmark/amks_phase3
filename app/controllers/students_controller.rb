@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   
   def index
-  	@students = Student.all
+  	@students = Student.active.alphabetical.paginate(:page => params[:page]).per_page(10)
   end
 
   def show
@@ -13,8 +13,29 @@ class StudentsController < ApplicationController
   end
 
   def edit
-    @student = Event.find(params[:id])
+    @student = Student.find(params[:id])
   end
+
+  def create
+    @student = Student.new(params[:student])
+
+    if @student.save
+      redirect_to @student, notice: "Successfully created #{@student.name}"
+    else
+      render action: "new"
+    end
+  end
+
+  def update
+    @student = Student.find(params[:id])
+
+    if @student.update_attributes(params[:student])
+      redirect_to @student, notice: "Successfully updated #{@student.name}"
+    else
+      render action: "edit"
+    end
+  end
+
 
 
 end

@@ -26,8 +26,15 @@
 </p>
 
 <p>
+  <b>Tournament Activity: </b>
+  <%= 'Blocks' %>
+  <%= 'Breaking' %>
+  <%= 'Sparring'%>
+</p>
+
+<p>
   <b>Active: </b>
-  <%= @student.active %>
+  <%= @student.active ? 'Yes' : 'No' %>
 </p>
 
 <div class="form-actions">

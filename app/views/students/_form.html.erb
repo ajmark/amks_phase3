@@ -3,6 +3,11 @@
     <legend><%= controller.action_name.capitalize %> Student</legend>
     <%= f.input :first_name %>
     <%= f.input :last_name %> 
+    <%= f.input :phone %>
+    <%= f.input :rank %>
+    <%= f.input :date_of_birth %>
+    <%= f.input :waiver_signed %>
+
   </fieldset>
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>

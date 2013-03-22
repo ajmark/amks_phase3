@@ -18,5 +18,10 @@
 
 </table> 
 
+
+<span class="smtext">
+<%= will_paginate @students, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
+</span>
+
 <%= link_to 'New Student', new_student_path, :class => 'btn btn-primary' %>
 
