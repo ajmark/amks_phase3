@@ -1,2 +1,21 @@
-<h1>Sections#show</h1>
-<p>Find me in app/views/sections/show.html.erb</p>
+<h1>Section Details</h1>
+
+<p>
+  <b>Rank(s): </b>
+  <%= "#{@section.min_rank} - #{@section.max_rank}" %>
+</p>
+
+<p>
+  <b>Age(s): </b>
+  <%= "#{@section.min_age} - #{@section.max_age}" %>
+</p>
+
+<p>
+  <b>Active: </b>
+  <%= @section.active ? "Yes" : "No" %>
+</p>
+
+<p>
+  <b>Students Registered</b>
+  <%=  %>
+</p>

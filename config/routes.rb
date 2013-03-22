@@ -1,5 +1,11 @@
 Karate67272::Application.routes.draw do
 
+  get "home/about"
+
+  get "home/contact"
+
+  get "home/privacy"
+
   get "sections/index"
 
   get "sections/show"

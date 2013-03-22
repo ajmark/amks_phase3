@@ -4,14 +4,14 @@
   <tr>
     <th>Name</th>
     <th>Age</th>
-	<th>Rank</th>
+	  <th>Rank</th>
   </tr>
 
 <% @students.each do |student| %>
   <tr>
     <td><%= link_to student.name, student_path(student) %></td>
     <td><%= student.age %></td>
-	<td><%= student.rank %></td>
+	  <td><%= student.rank %></td>
   </tr>
 
 <% end %> 
