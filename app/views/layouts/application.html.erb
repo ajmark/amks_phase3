@@ -13,14 +13,18 @@
     <!-- TITLE BAR -->
   	
   	<!-- NAV BAR -->
-  	<div class="navbar">
-  	  <div class="navbar-inner">
-  	    <div class="container">
-  	      
-  	    </div>
-  	  </div>
-  	</div>
-  	</div>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">A&M KarateSchool</a>
+          <ul class="nav">
+            <li><%= link_to "Students", students_path %></li>
+            <li><%= link_to "Events", events_path %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
   	<!-- MAIN CONTENT -->
   	<div class="container">
 
@@ -33,12 +37,17 @@
 
   		<div class="row">
   			<!-- main content placed here -->
-  			<div class="span12">
+  			<div class="span7">
   			  <div id="main_content">
   			   <%= yield %>
   			  </div>
   			</div>
+
+        <div class ="span5">
+
+        </div>
   		</div>
+
   	</div>
   </div>
 	

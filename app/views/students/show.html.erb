@@ -1,0 +1,37 @@
+<h1>Student Info</h1>
+
+<p>
+  <b>Name: </b>
+  <%= @student.name %>
+</p>
+
+<p>
+  <b>Rank: </b>
+  <%= @student.rank %>
+</p>
+
+<p>
+  <b>Waiver Signed?: </b>
+  <%= @student.waiver_signed %>
+</p>
+
+<p>
+  <b>Phone Number: </b>
+  <%= @student.phone %>
+</p>
+
+<p>
+  <b>Date of Birth: </b>
+  <%= @student.date_of_birth.strftime("%m/%d/%y") %>
+</p>
+
+<p>
+  <b>Active: </b>
+  <%= @student.active %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', students_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_student_path(@student), :class => 'btn' %>
+  <%= link_to 'Delete', student_path(@student), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

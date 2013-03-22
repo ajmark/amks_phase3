@@ -20,7 +20,7 @@ class EventsController < ApplicationController
     @event = Event.new(params[:event])
 
     if @event.save
-      redirect_to @event, notice: "#Successfully created {@event.name}."
+      redirect_to @event, notice: "Successfully created #{@event.name}"
     else
       render action: "new"
     end
@@ -30,7 +30,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
 
     if @event.update_attributes(params[:event])
-      redirect_to @event, notice: "Successfully updated #{@event.name}."
+      redirect_to @event, notice: "Successfully updated #{@event.name}"
     else
       render action: "edit"
     end
