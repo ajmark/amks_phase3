@@ -2,8 +2,8 @@
 
 <table class = "table table-striped">
   <tr>
-    <th>Event</th>
-    <th>Age(s)</th>
+  <th>Event</th>
+  <th>Age(s)</th>
 	<th>Rank(s)</th>
 	<th>Registrants</th>
 
@@ -13,7 +13,7 @@
   <tr>
     <td><%= link_to section.event_id, section_path(section) %></td>
     <td><%= "#{section.min_age} - #{section.max_age}" %></td>
-    <td><%= "#{section.min_rank} - #{section.max_rank}" %></td>
+    <td><%= "#{rank_name(section.min_rank)} - #{rank_name(section.max_rank)}" %></td>
 
   </tr>
 
@@ -26,6 +26,6 @@
 <%= will_paginate @sections, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
 </span>
 
-<%= link_to 'New Section', new_student_path, :class => 'btn btn-primary' %>
+<%= link_to 'New Section', new_section_path, :class => 'btn btn-primary' %>
 
 

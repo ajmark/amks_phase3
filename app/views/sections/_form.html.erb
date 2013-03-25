@@ -1,0 +1,16 @@
+<%= simple_form_for @section, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Section</legend>
+    <%= f.input :event_id %>
+    <%= f.input :min_age %>
+    <%= f.input :max_age %>
+    <%= f.input :min_rank %>
+    <%= f.input :max_rank %>
+
+
+  </fieldset>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to 'Cancel', sections_path, :class => 'btn' %>
+  </div>
+<% end %>

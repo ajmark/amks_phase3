@@ -1,7 +1,7 @@
 class SectionsController < ApplicationController
 
   def index
-  	@sections = Section.active.alphabetical.paginate(:page => params[:page]).per_page(10)
+  	@sections = Section.alphabetical.paginate(:page => params[:page]).per_page(10)
   end
 
   def show

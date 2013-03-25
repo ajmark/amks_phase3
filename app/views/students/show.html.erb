@@ -7,17 +7,17 @@
 
 <p>
   <b>Rank: </b>
-  <%= @student.rank %>
+  <%= rank_name(@student.rank) %>
 </p>
 
 <p>
-  <b>Waiver Signed?: </b>
-  <%= @student.waiver_signed %>
+  <b>Waiver Signed: </b>
+  <%= @student.waiver_signed ? 'Yes' : 'No' %>
 </p>
 
 <p>
-  <b>Phone Number: </b>
-  <%= @student.phone %>
+  <b>Phone: </b>
+  <%= reformat_phone(@student.phone) %>
 </p>
 
 <p>
@@ -27,9 +27,11 @@
 
 <p>
   <b>Tournament Activity: </b>
-  <%= 'Blocks' %>
-  <%= 'Breaking' %>
-  <%= 'Sparring'%>
+</p> 
+<p> 
+  <%= link_to 'Blocks' %> &nbsp 
+  <%= link_to 'Breaking' %> &nbsp
+  <%= link_to 'Sparring'%>
 </p>
 
 <p>

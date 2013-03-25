@@ -7,21 +7,20 @@
 	  <th>Rank</th>
   </tr>
 
-<% @students.each do |student| %>
+<% @students.active.each do |student| %>
   <tr>
     <td><%= link_to student.name, student_path(student) %></td>
     <td><%= student.age %></td>
-	  <td><%= student.rank %></td>
+	  <td><%= rank_name(student.rank) %></td>
   </tr>
-
 <% end %> 
-
 </table> 
-
 
 <span class="smtext">
 <%= will_paginate @students, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
 </span>
+
+<%= render 'inactive' %> 
 
 <%= link_to 'New Student', new_student_path, :class => 'btn btn-primary' %>
 

@@ -2,7 +2,7 @@
 
 <p>
   <b>Rank(s): </b>
-  <%= "#{@section.min_rank} - #{@section.max_rank}" %>
+  <%= "#{rank_name(@section.min_rank)} - #{rank_name(@section.max_rank)}" %>
 </p>
 
 <p>
@@ -19,3 +19,9 @@
   <b>Students Registered</b>
   <%=  %>
 </p>
+
+<div class="form-actions">
+  <%= link_to 'Back', sections_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_section_path(@section), :class => 'btn' %>
+  <%= link_to 'Delete', section_path(@section), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

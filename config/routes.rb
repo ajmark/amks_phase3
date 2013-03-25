@@ -1,5 +1,13 @@
 Karate67272::Application.routes.draw do
 
+  get "registrations/index"
+
+  get "registrations/show"
+
+  get "registrations/edit"
+
+  get "registrations/new"
+
   get "home/about"
 
   get "home/contact"
