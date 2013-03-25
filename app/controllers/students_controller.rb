@@ -20,7 +20,7 @@ class StudentsController < ApplicationController
     @student = Student.new(params[:student])
 
     if @student.save
-      redirect_to @student, notice: "Successfully created #{@student.name}"
+      redirect_to @student, notice: "Successfully created #{@student.proper_name}"
     else
       render action: "new"
     end
@@ -30,7 +30,7 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
 
     if @student.update_attributes(params[:student])
-      redirect_to @student, notice: "Successfully updated #{@student.name}"
+      redirect_to @student, notice: "Successfully updated #{@student.proper_name}"
     else
       render action: "edit"
     end

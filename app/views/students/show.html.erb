@@ -26,13 +26,18 @@
 </p>
 
 <p>
-  <b>Tournament Activity: </b>
+  <b>Tournament Activity </b>
+  <table class = "table table-striped">
+  
+  <% @student.sections.each do |section| %>
+    <tr>
+      <td><%= link_to section.event.name, section_path(section) %></td> 
+    </tr>
+  <% end %>
+  
+  </table>
 </p> 
-<p> 
-  <%= link_to 'Blocks' %> &nbsp 
-  <%= link_to 'Breaking' %> &nbsp
-  <%= link_to 'Sparring'%>
-</p>
+
 
 <p>
   <b>Active: </b>

@@ -11,9 +11,10 @@
 
 <% @sections.each do |section| %>
   <tr>
-    <td><%= link_to section.event_id, section_path(section) %></td>
+    <td><%= link_to section.event.name, section_path(section) %></td>
     <td><%= "#{section.min_age} - #{section.max_age}" %></td>
     <td><%= "#{rank_name(section.min_rank)} - #{rank_name(section.max_rank)}" %></td>
+    <td><%= section.students.size %> </td> 
 
   </tr>
 

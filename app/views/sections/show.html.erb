@@ -17,7 +17,22 @@
 
 <p>
   <b>Students Registered</b>
-  <%=  %>
+  <table class = "table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Rank</th>
+    </tr>
+  
+  <% @section.students.each do |student| %>
+    <tr>
+      <td><%= link_to student.name, student_path(student) %></td>
+      <td><%= student.age %></td>
+      <td><%= rank_name(student.rank) %></td>
+    </tr>
+  <% end %> 
+  </table> 
+
 </p>
 
 <div class="form-actions">
