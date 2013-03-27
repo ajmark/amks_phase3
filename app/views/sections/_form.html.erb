@@ -5,7 +5,7 @@
     <%= f.input :min_age %>
     <%= f.input :max_age %>
     <%= f.input :min_rank, :collection => Student::RANKS %>
-    <%= f.input :max_rank, :lable => "Rank", :collection => [['Tenth Gup', 1] ,['Ninth Gup', 2], ['Eight Gup', 3], ['Seventh Gup', 4], ['Sixth Gup', 5], ['Fifth Gup', 6], ['Fourth Gup', 7], ['Third Gup', 8], ['Second Gup', 9], ['First Gup', 10], ['First Dan', 11], ['Second Dan', 12], ['Third Dan', 13], ['Fourth Dan', 14]] %>
+    <%= f.input :max_rank, :collection => Student::RANKS %>
 
   </fieldset>
   <div class="form-actions">
