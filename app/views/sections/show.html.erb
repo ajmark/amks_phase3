@@ -2,12 +2,17 @@
 
 <p>
   <b>Rank(s): </b>
-  <%= "#{rank_name(@section.min_rank)} - #{rank_name(@section.max_rank)}" %>
+  <%= rank_range(@section) %>
 </p>
 
 <p>
   <b>Age(s): </b>
-  <%= "#{@section.min_age} - #{@section.max_age}" %>
+  <%= age_range(@section) %>
+</p>
+
+<p>
+  <b>Event: </b>
+  <%= @section.event.name %>
 </p>
 
 <p>

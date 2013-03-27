@@ -1,6 +1,6 @@
 class RegistrationsController < ApplicationController
   def index
-  	@registrations = Registration.by_date.paginate(:page => params[:page]).per_page(10)
+  	@registrations = Registration.by_student.paginate(:page => params[:page]).per_page(10)
   end
 
   def show

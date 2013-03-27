@@ -7,7 +7,7 @@
     <%= f.input :rank, :lable => "Rank", :collection => [['Tenth Gup', 1] ,['Ninth Gup', 2], ['Eight Gup', 3], ['Seventh Gup', 4], ['Sixth Gup', 5], ['Fifth Gup', 6], ['Fourth Gup', 7], ['Third Gup', 8], ['Second Gup', 9], ['First Gup', 10], ['First Dan', 11], ['Second Dan', 12], ['Third Dan', 13], ['Fourth Dan', 14]] %>
     <%= f.input :date_of_birth, :as => :date, :order => [:month, :day, :year], :start_year => Date.today.year - 100, :end_year => Date.today.year %>
     <%= f.input :waiver_signed, :as => :radio_buttons %>
-    <%= f.input :active, :as => :radio_buttons %> 
+    <%= f.input :active, :as => :boolean %> 
 
   </fieldset>
   <div class="form-actions">

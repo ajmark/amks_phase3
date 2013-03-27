@@ -3,15 +3,19 @@
 <table class = "table table-striped">
   <tr>
     <th>Section</th>
+    <th>Age(s)</th>
+    <th>Rank(s)</th>
     <th>Student</th>
-	<th>Date</th>
+    <th>Date</th>
   </tr>
 
 <% @registrations.each do |registration| %>
   <tr>
-    <td><%= link_to registration.section_id, registration_path(registration) %></td>
-    <td><%= link_to registration.student.name, registration_path(registration) %></td>
-	<td><%= registration.date.strftime("%m/%d/%y") %></td>
+    <td><%= link_to registration.section.event.name, section_path(registration.section) %></td>
+    <td><%= age_range(registration.section) %></td>
+    <td><%= rank_range(registration.section) %></td>
+    <td><%= link_to registration.student.name, student_path(registration.student) %></td>
+	  <td><%= registration.date.strftime("%m/%d/%y") %></td>
   </tr>
 <% end %> 
 </table> 

@@ -41,4 +41,21 @@ module ApplicationHelper
   def eligible_unregistered_students_for_section(section)
 
   end
+
+  def age_range(section)
+    if section.max_age == nil 
+      return "#{section.min_age} and up"
+    else
+      "#{section.min_age} - #{section.max_age}"
+    end 
+  end 
+
+  def rank_range(section)
+    if section.max_rank == nil
+      return "#{rank_name(section.min_rank)} and up"
+    else 
+      "#{rank_name(section.min_rank)} - #{rank_name(section.max_rank)}"
+    end 
+  end 
+  
 end
