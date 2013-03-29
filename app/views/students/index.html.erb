@@ -22,21 +22,22 @@
 
 <h1>Inactive Students</h1>
 
-<table class = "table table-striped">
-  <tr>
-    <th>Name</th>
-    <th>Age</th>
-    <th>Rank</th>
-  </tr>
+  <table class = "table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Rank</th>
+    </tr>
+  
+  <% @students.inactive.each do |student| %>
+    <tr>
+      <td><%= link_to student.name, student_path(student) %></td>
+      <td><%= student.age %></td>
+      <td><%= rank_name(student.rank) %></td>
+    </tr>
+  <% end %> 
+  </table> 
 
-<% @students.inactive.each do |student| %>
-  <tr>
-    <td><%= link_to student.name, student_path(student) %></td>
-    <td><%= student.age %></td>
-    <td><%= rank_name(student.rank) %></td>
-  </tr>
-<% end %> 
-</table> 
 
 
 <%= link_to 'New Student', new_student_path, :class => 'btn btn-primary' %>
