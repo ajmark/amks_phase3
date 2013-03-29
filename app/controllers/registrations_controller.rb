@@ -30,7 +30,7 @@ class RegistrationsController < ApplicationController
 def destroy
     @registration = Registration.find(params[:id])
     @registration.destroy
-    redirect_to @section, notice: "Successfully destroyed registration"
+    redirect_to sections_path, notice: "Successfully destroyed registration"
   end
 
 end
