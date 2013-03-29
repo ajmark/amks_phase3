@@ -22,6 +22,12 @@ img.right {
      padding-bottom: 10px;
 }
 
+img.left {
+     float: left;
+     padding-right: 35px;
+     padding-bottom: 10px;
+}
+
 .well {
      line-height: 1.5;
 }

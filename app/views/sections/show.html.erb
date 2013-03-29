@@ -34,6 +34,7 @@
       <td><%= link_to student.name, student_path(student) %></td>
       <td><%= student.age %></td>
       <td><%= rank_name(student.rank) %></td>
+
     </tr>
   <% end %> 
   </table> 
@@ -41,7 +42,7 @@
 </p>
 
 <div class="form-actions">
-  <%= link_to 'Register Students for this Section', new_registration_path, :class => 'btn btn-primary' %>
+  <%= link_to 'Register Students for this Section', new_registration_path(:id => @section.id), :class => 'btn btn-primary' %>
   <br><br>
   <%= link_to 'Back', sections_path, :class => 'btn'  %>
   <%= link_to 'Edit', edit_section_path(@section), :class => 'btn' %>

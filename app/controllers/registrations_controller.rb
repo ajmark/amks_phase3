@@ -13,27 +13,24 @@ class RegistrationsController < ApplicationController
 
   def new
   	@registration = Registration.new
-    @registration.section_id = params[:id] unless params[:id].nil? 
+    @registration.section_id = params[:id]
   end
 
   def create
     @registration = Registration.new(params[:registration])
     @registration.date = Date.today
+    
     if @registration.save
-      redirect_to @registration.section, notice: "Successfully created registration"
+      redirect_to @registration.section, notice: "Successfully registered student"
     else
       render action: "new"
     end
   end
 
-  def update
+def destroy
     @registration = Registration.find(params[:id])
-
-    if @registration.update_attributes(params[:section])
-      redirect_to @registration.section, notice: "Successfully updated registration"
-    else
-      render action: "edit"
-    end
+    @registration.destroy
+    redirect_to @section, notice: "Successfully destroyed registration"
   end
 
 end

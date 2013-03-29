@@ -35,11 +35,11 @@ module ApplicationHelper
   end
   
   def eligible_students_for_section(section)
-
+    Student.ranks_between(section.min_rank, section.max_rank).ages_between(section.min_age, section.max_age)
   end
   
   def eligible_unregistered_students_for_section(section)
-
+    eligible_students_for_section(section) - section.students
   end
 
   def age_range(section)

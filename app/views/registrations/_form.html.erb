@@ -1,7 +1,7 @@
 <%= simple_form_for @registration, :html => { :class => 'form-horizontal' } do |f| %>
   <fieldset>
     <legend><%= controller.action_name.capitalize %> Registration</legend>
-    <%= f.association :student, :collection => Student.active.alphabetical %> 
+    <%= f.association :student, :collection => eligible_unregistered_students_for_section(@registration.section) %> 
     <%= f.input :section_id, :as => :hidden, :input_html => {:value => @registration.section_id} %> 
 
   </fieldset>
