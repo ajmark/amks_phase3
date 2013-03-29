@@ -15,6 +15,13 @@ select { width: 150px; }
 
 select.date { width: 90px; }
 
+img.right {
+     float: right;
+     padding-left: 65px;
+     padding-right: 70px;
+     padding-bottom: 10px;
+}
+
 .well {
      line-height: 1.5;
 }

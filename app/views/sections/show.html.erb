@@ -41,6 +41,8 @@
 </p>
 
 <div class="form-actions">
+  <%= link_to 'Register Students for this Section', new_registration_path, :class => 'btn btn-primary' %>
+  <br><br>
   <%= link_to 'Back', sections_path, :class => 'btn'  %>
   <%= link_to 'Edit', edit_section_path(@section), :class => 'btn' %>
   <%= link_to 'Delete', section_path(@section), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>

@@ -16,9 +16,8 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="#">A&M KarateSchool</a>
+          <a class="brand" <%= link_to "A&M KarateSchool", home_path %> </a>
           <ul class="nav">
-            <li><%= link_to "Home", home_path %></li>
             <li><%= link_to "Students", students_path %></li>
             <li><%= link_to "Sections", sections_path %></li>
             <li><%= link_to "Events", events_path %></li>
