@@ -15,6 +15,22 @@ select { width: 150px; }
 
 select.date { width: 90px; }
 
+div.right_display {
+     float: left;
+     padding-left: 15px; 
+     padding-top: 60px;
+}
+
+div.left_display {
+     float: left;
+     padding-left: 30px;
+}
+
+div.right_table {
+     float: left;
+     padding-left: 50px; 
+}
+
 img.right {
      float: right;
      padding-left: 65px;

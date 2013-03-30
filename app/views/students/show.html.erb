@@ -1,51 +1,56 @@
-<h1>Student Info</h1>
-
-<p>
-  <b>Name: </b>
-  <%= @student.name %>
-</p>
-
-<p>
-  <b>Rank: </b>
-  <%= rank_name(@student.rank) %>
-</p>
-
-<p>
-  <b>Waiver Signed: </b>
-  <%= @student.waiver_signed ? 'Yes' : 'No' %>
-</p>
-
-<p>
-  <b>Phone: </b>
-  <%= reformat_phone(@student.phone) %>
-</p>
-
-<p>
-  <b>Date of Birth: </b>
-  <%= @student.date_of_birth.strftime("%m/%d/%y") %>
-</p>
-
-<p>
-  <b>Tournament Activity </b>
-  <table class = "table table-striped">
+<div class = "left_display">   
+  <h1>Student Info</h1>
   
-  <% @student.sections.each do |section| %>
-    <tr>
-      <td><%= link_to section.event.name, section_path(section) %></td> 
-    </tr>
-  <% end %>
+  <p>
+    <b>Name: </b>
+    <%= @student.name %>
+  </p>
   
-  </table>
-</p> 
-
-
-<p>
-  <b>Active: </b>
-  <%= @student.active ? 'Yes' : 'No' %>
-</p>
+  <p>
+    <b>Rank: </b>
+    <%= rank_name(@student.rank) %>
+  </p>
+  
+  <p>
+    <b>Waiver Signed: </b>
+    <%= @student.waiver_signed ? 'Yes' : 'No' %>
+  </p>
+  
+  <p>
+    <b>Phone: </b>
+    <%= reformat_phone(@student.phone) %>
+  </p>
+  
+  <p >
+    <b>Date of Birth: </b>
+    <%= @student.date_of_birth.strftime("%m/%d/%y") %>
+  </p>
+  
+  <p>
+    <b>Active: </b>
+    <%= @student.active ? 'Yes' : 'No' %>
+  </p>
 
 <div class="form-actions">
   <%= link_to 'Back', students_path, :class => 'btn'  %>
   <%= link_to 'Edit', edit_student_path(@student), :class => 'btn' %>
   <%= link_to 'Delete', student_path(@student), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
 </div>
+
+</div>
+
+<div class = "right_display"
+  <p>
+    <b>Tournament Activity </b>
+    <table class = "table table-striped">
+    
+    <% @student.sections.each do |section| %>
+      <tr>
+        <td><%= link_to section.event.name, section_path(section) %></td> 
+      </tr>
+    <% end %>
+    
+    </table>
+  </p> 
+</div>
+

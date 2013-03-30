@@ -1,52 +1,56 @@
-<h1>Section Details</h1>
-
-<p>
-  <b>Rank(s): </b>
-  <%= rank_range(@section) %>
-</p>
-
-<p>
-  <b>Age(s): </b>
-  <%= age_range(@section) %>
-</p>
-
-<p>
-  <b>Event: </b>
-  <%= @section.event.name %>
-</p>
-
-<p>
-  <b>Active: </b>
-  <%= @section.active ? "Yes" : "No" %>
-</p>
-
-<p>
-  <b>Students Registered</b>
-  <table class = "table table-striped">
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Rank</th>
-      <th>Delete</th>
-    </tr>
+<div class = "left_display">
+  <h1>Section Details</h1>
   
-  <% @section.students.each do |student| %>
-    <tr>
-      <td><%= link_to student.name, student_path(student) %></td>
-      <td><%= student.age %></td>
-      <td><%= rank_name(student.rank) %></td>
-      <td><%= link_to(image_tag("delete_dg.gif", :border => 0), registration_path(Registration.for_student(student.id).for_section(@section.id).first), :confirm => 'Are you sure you wish to delete this information?', :method => :delete) %></td>
+  <p>
+    <b>Rank(s): </b>
+    <%= rank_range(@section) %>
+  </p>
+  
+  <p>
+    <b>Age(s): </b>
+    <%= age_range(@section) %>
+  </p>
+  
+  <p>
+    <b>Event: </b>
+    <%= @section.event.name %>
+  </p>
+  
+  <p>
+    <b>Active: </b>
+    <%= @section.active ? "Yes" : "No" %>
+  </p>
 
-    </tr>
-  <% end %> 
-  </table> 
-
-</p>
-
-<div class="form-actions">
-  <%= link_to 'Register Students for this Section', new_registration_path(:id => @section.id), :class => 'btn btn-primary' %>
-  <br><br>
-  <%= link_to 'Back', sections_path, :class => 'btn'  %>
-  <%= link_to 'Edit', edit_section_path(@section), :class => 'btn' %>
-  <%= link_to 'Delete', section_path(@section), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+  <div class="form-actions">
+    <%= link_to 'Back', sections_path, :class => 'btn'  %>
+    <%= link_to 'Edit', edit_section_path(@section), :class => 'btn' %>
+    <%= link_to 'Delete', section_path(@section), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+  </div>
 </div>
+
+<div class = "right_display">
+  <p>
+    <b>Students Registered</b>
+    <table class = "table table-striped" id = "right_table">
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Rank</th>
+        <th>Delete</th>
+      </tr>
+    
+    <% @section.students.each do |student| %>
+      <tr>
+        <td><%= link_to student.name, student_path(student) %></td>
+        <td><%= student.age %></td>
+        <td><%= rank_name(student.rank) %></td>
+        <td><%= link_to(image_tag("delete_dg.gif", :border => 0), registration_path(Registration.for_student(student.id).for_section(@section.id).first), :confirm => 'Are you sure you wish to delete this information?', :method => :delete) %></td>
+      </tr>
+    <% end %> 
+    </table> 
+  </p>
+
+  <div class="form-actions">
+    <%= link_to 'Register Students for this Section', new_registration_path(:id => @section.id), :class => 'btn btn-primary' %>
+  </div>
+<div>
