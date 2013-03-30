@@ -15,9 +15,9 @@ class Section < ActiveRecord::Base
   scope :alphabetical, joins(:event).order('events.name, min_rank, min_age')
   
   # Validations
-  validates_numericality_of :min_rank, :only_integer => true, :greater_than => 0, :message => "Please select a rank"
+  validates_numericality_of :min_rank, :only_integer => true, :greater_than => 0, :message => "is not a number"
   validates_numericality_of :max_rank, :only_integer => true, :greater_than_or_equal_to => :min_rank, :allow_blank => true
-  validates_numericality_of :min_age, :only_integer => true, :greater_than_or_equal_to => 5, :message => "The minimum age must be at least 5"
+  validates_numericality_of :min_age, :only_integer => true, :greater_than_or_equal_to => 5, :message => "is not a number"
   validates_numericality_of :max_age, :only_integer => true, :greater_than_or_equal_to => :min_age, :allow_blank => true
   validates_numericality_of :event_id, :only_integer => true, :greater_than => 0, :message => "is not a valid event"
   validates_inclusion_of :active, :in => [true, false], :message => "must be true or false"
